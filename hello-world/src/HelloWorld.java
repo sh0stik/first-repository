@@ -1,5 +1,11 @@
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello world Again!");
+
+        int[] x = new int[5];
+        int i;
+        for (i = 0; i < x.length; i++)
+            x[i] = i;
+        System.out.println(x[i]);
+
     }
 }
