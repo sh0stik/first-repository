@@ -2,10 +2,7 @@ import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class MiniHackathonMap {
     public static void main(String[] args) {
@@ -46,12 +43,9 @@ public class MiniHackathonMap {
                     .build()
                     .parse();
             for (Customer customer : customers) {
-                String lastName = customer.getLastName();
-                if (customersByLastName.containsKey(lastName.toLowerCase())) {
-                    customersByLastName.get(lastName).add(customer);
-                } else {
-                    customersByLastName.put(lastName.toLowerCase(), List.of(customer));
-                }
+                String lastName = customer.getLastName().toLowerCase();
+                customersByLastName.putIfAbsent(lastName, new ArrayList<>());
+                customersByLastName.get(lastName).add(customer);
             }
         } catch (FileNotFoundException e) {
             System.out.println(e);
