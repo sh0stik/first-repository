@@ -3,7 +3,9 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class MiniHackathonList {
     public static void main(String[] args) {
@@ -31,7 +33,7 @@ public class MiniHackathonList {
             }
         }
         if (count == 0) {
-            System.out.println("There is no customer with lastname " + input);
+            System.out.println("There is no customer with Last Name: " + input);
         }
     }
 

@@ -23,11 +23,10 @@ public class MiniHackathonMap {
 
 
     private static void findAndPrintCustomer(String input, Map<String, List<Customer>> customersByLastName) {
-        int count = 0;
         if (customersByLastName.containsKey(input.toLowerCase())) {
             customersByLastName.get(input).forEach(System.out::println);
         } else {
-            System.out.println("There is no customer with lastname " + input);
+            System.out.println("There is no customer with Last Name: " + input);
         }
 
     }
